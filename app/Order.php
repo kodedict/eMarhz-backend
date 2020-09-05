@@ -11,6 +11,7 @@ class Order extends Model
         'orderDetail',
         'customerID',
         'sellerID',
+        'paymentRef',
         'price'
     ];
 }
