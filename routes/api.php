@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,45 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+
+Route::get('/product','API\general\productController@getProduct');
+Route::post('/login','API\general\userController@login');
+Route::post('/register','API\general\userController@register');
+//Route::post('/forget-PW','API\general\userController@forgetPW');
+
+Route::group(['middleware' => 'auth:api'], function(){
+
+//===Admin Route
+
+    Route::get('/adminProfile','API\admin\userController@getProfile');
+
+    Route::get('/supply','API\admin\supplyController@index');
+
+    Route::post('/supply','API\admin\supplyController@store');
+    Route::post('/supply/{id}','API\admin\supplyController@update');
+    Route::post('/supplyDelete/{id}','API\admin\supplyController@delete');
+
+    //===Admin Route
+
+//===Seller Route
+
+    Route::get('/sellerProfile','API\seller\userController@getProfile');
+
+    Route::get('/sellerProduct','API\seller\productController@index');
+
+    Route::post('/sellerProduct','API\seller\productController@store');
+    Route::post('/sellerProduct/{id}','API\seller\productController@update');
+    Route::post('/sellerProductDelete/{id}','API\seller\productController@delete');
+
+    //===Seller Route
+
+//===Customer Route
+
+    Route::get('/customerProfile','API\customer\userController@getProfile');
+
+    Route::get('/order/{id}','API\customer\orderController@order');
+    Route::post('/placeOrder','API\customer\orderController@placeOrder');
+
+    //===Customer Route
 });

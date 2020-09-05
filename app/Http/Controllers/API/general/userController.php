@@ -9,9 +9,9 @@ class userController extends Controller
 {
     //
 
-    public function login(){}
+    public function login(Request $request){}
 
-    public function register(){}
+    public function register(Request $request){}
 
-//    protected function forgetPW(){}
+//    protected function forgetPW(Request $request){}
 }

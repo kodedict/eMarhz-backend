@@ -13,11 +13,11 @@ class productController extends Controller
     public function index(){}
 
     //Return store product form
-    public function store(){}
+    public function store(Request $request){}
 
     //Return update product
-    public function update(){}
+    public function update($id){}
 
     //Return delete product
-    public function delete(){}
+    public function delete($id){}
 }

@@ -13,11 +13,11 @@ class supplyController extends Controller
     public function index(){}
 
     //Return store supplier form
-    public function store(){}
+    public function store(Request $request){}
 
     //Return update supplier
-    public function update(){}
+    public function update($id){}
 
     //Return delete supplier
-    public function delete(){}
+    public function delete($id){}
 }

@@ -9,7 +9,7 @@ class orderController extends Controller
 {
     //
 
-    public function order(){}
+    public function order($id){}
 
-    public function placeOrder(){}
+    public function placeOrder(Request $request){}
 }
