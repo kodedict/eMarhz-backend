@@ -15,6 +15,8 @@ class CreateOrderInvoicesTable extends Migration
     {
         Schema::create('order_invoices', function (Blueprint $table) {
             $table->id();
+            $table->string('orderID','11');
+            $table->string('paymentRef','100');
             $table->timestamps();
         });
     }
