@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->text('orderDetail');
             $table->string('customerID','11');
             $table->string('sellerID');
+            $table->string('paymentRef','100');
             $table->timestamps();
         });
     }
