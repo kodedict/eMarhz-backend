@@ -15,6 +15,7 @@ class CreateSuppliesTable extends Migration
     {
         Schema::create('supplies', function (Blueprint $table) {
             $table->id();
+            $table->string('name','100');
             $table->timestamps();
         });
     }
