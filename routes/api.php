@@ -41,6 +41,8 @@ Route::post('/register','API\general\userController@register');
 
     Route::get('/sellerProduct','API\seller\productController@index');
 
+    Route::get('/sellerSupply','API\seller\productController@formExtra');
+
     Route::post('/sellerProduct','API\seller\productController@store');
     Route::post('/sellerProduct/{id}','API\seller\productController@update');
     Route::post('/sellerProductDelete/{id}','API\seller\productController@delete');
