@@ -1,18 +1,23 @@
 language: php
 php:
-  - 7.3.7
+- 7.3.7
 services:
-  - mysql
+- mysql
 cache:
   directories:
-    - node_modules
-    - vendor
+  - node_modules
+  - vendor
 before_script:
-  - cp .env.travis .env
-  - sudo mysql -e 'create database homestead;'
-  - composer self-update
-  - composer install --prefer-source --no-interaction --dev
-  - php artisan key:generate
-  - php artisan migrate
+- cp .env.travis .env
+- sudo mysql -e 'create database homestead;'
+- composer self-update
+- composer install --prefer-source --no-interaction --dev
+- php artisan key:generate
+- php artisan migrate
 script:
-  - vendor/bin/phpunit
+- vendor/bin/phpunit
+deploy:
+  provider: heroku
+  app: emarhzapi
+  api_key:
+    secure: vShneN720bN6rWpzNn+97VPBTyz8J6EvTnAwtyA43leReA4jJe3FYZkVDOLKkP2AYBCLAnWlqwx6UOrf5p0oqVQhXlprX/LXgzHcRZnXeXM2h9/39eJQRvuuDaZnn/oz4rtC5yfvxxA5djXh2Q256moy+F8QaQXkrS291fQEcGU5QT2XFxsQnnSllhPbCHxx7sLkBgXmEON7fNg0qu3CYg0ZpoWNYMCKE0UqVvCpCnswcUhDRhT50eM97FS16+cp/Sw2+pxBj2Fm8uwt3GCWD6eIX97MMhnk8oWTubxaeb3ZpJZKm4WLSXmYfSyZ8co818hu4et9nxno88B2FU4//g6PPTTAj4hBZJK351uakzKwxgzuB5XAMmjzfAEWFlB0R86v1B700kFEAdQ1oWMe8Qns6jXZH9vzvxkvoLLXfWbBOFFSKPjsyWhBx7J5TowuVuC6nxV8aPQqVXnQrZop4TyTyZHoN/lELagCHNUuv5KCKw4sLN0wpg0LJtFfB0xCQICAbtg2FfAmn2d4rQo4ZQqsFEyOd8cb7gKnlsjaKQukwSm2rMRSwpgYBxDgNmKSU6cLAPkGjjwIKhxV9xqXI0mt61w3q9Vxsic/Cx+RTjUXcLdQ+XH5xIUV7Pjnc5eVYZxspl55KcTvFLoPHgX1pDkPSzHx+W9SovxAj6p4qWg=
