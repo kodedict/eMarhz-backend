@@ -8,4 +8,10 @@ use Illuminate\Http\Request;
 class userController extends Controller
 {
     //
+
+    public function login(){}
+
+    public function register(){}
+
+//    protected function forgetPW(){}
 }
