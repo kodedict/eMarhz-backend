@@ -21,7 +21,7 @@ Route::post('/login','API\general\userController@login');
 Route::post('/register','API\general\userController@register');
 //Route::post('/forget-PW','API\general\userController@forgetPW');
 
-Route::group(['middleware' => 'auth:api'], function(){
+//Route::group(['middleware' => 'auth:api'], function(){
 
 //===Admin Route
 
@@ -55,4 +55,4 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('/placeOrder','API\customer\orderController@placeOrder');
 
     //===Customer Route
-});
+//});
