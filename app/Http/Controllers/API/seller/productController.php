@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\API\seller;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\API\apiController as apiController;
 use Illuminate\Http\Request;
 
-class productController extends Controller
+class productController extends apiController
 {
     //
 

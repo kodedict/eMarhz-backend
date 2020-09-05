@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\API\seller;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Controllers\API\apiController as apiController;
 
-class userController extends Controller
+class userController extends apiController
 {
     //
 
-    public function getProfile(){}
+    public function getProfile($id){}
 }

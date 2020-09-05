@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 //===Admin Route
 
-    Route::get('/adminProfile','API\admin\userController@getProfile');
+    Route::get('/adminProfile/{id}','API\admin\userController@getProfile');
 
     Route::get('/supply','API\admin\supplyController@index');
 
@@ -37,7 +37,7 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 //===Seller Route
 
-    Route::get('/sellerProfile','API\seller\userController@getProfile');
+    Route::get('/sellerProfile/{id}','API\seller\userController@getProfile');
 
     Route::get('/sellerProduct','API\seller\productController@index');
 
@@ -49,7 +49,7 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 //===Customer Route
 
-    Route::get('/customerProfile','API\customer\userController@getProfile');
+    Route::get('/customerProfile/{id}','API\customer\userController@getProfile');
 
     Route::get('/order/{id}','API\customer\orderController@order');
     Route::post('/placeOrder','API\customer\orderController@placeOrder');
