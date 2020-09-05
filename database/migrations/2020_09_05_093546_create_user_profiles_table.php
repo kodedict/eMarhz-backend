@@ -17,7 +17,6 @@ class CreateUserProfilesTable extends Migration
             $table->id();
             $table->string('userID','11');
             $table->text('billingInfo');
-            $table->timestamps();
         });
     }
 
