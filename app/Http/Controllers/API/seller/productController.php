@@ -14,7 +14,7 @@ class productController extends apiController
     //Return page product list
     public function index(){
 
-        $fetch = Product::query()->get()->sortByDesc('id')->all();
+        $fetch = Product::query()->get()->sortByDesc('id')->values()->all();
 
         if($fetch){return $this->sendResponse($fetch,'success');}
         else{return $this->sendError('fail','fail');}
@@ -24,7 +24,7 @@ class productController extends apiController
     public function store(Request $request){
 
         $post = Product::query()->create([
-            'name'        => $request['name'],
+            'name'        => strtolower($request['name']),
             'quantity'    => $request['quantity'],
             'image'       => $request['image'],
             'supplierID'  => $request['supplier'],
@@ -41,7 +41,7 @@ class productController extends apiController
         $query = Product::query()->find($id);
         if(!$query){return $this->sendError('fail','fail');}
         else{
-            $query['name']       = $request['name'];
+            $query['name']       = strtolower($request['name']);
             $query['quantity']   = $request['quantity'];
             $query['image']      = $request['image'];
             $query['supplierID'] = $request['supplier'];

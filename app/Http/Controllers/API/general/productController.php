@@ -11,9 +11,11 @@ class productController extends apiController
 
     public function getProduct(){
 
-        $fetch = Product::query()->get()->sortByDesc('id')->all();
+        $fetch = Product::query()->get()->sortByDesc('id')->values()->all();
 
-        if($fetch){return $this->sendResponse($fetch,'success');}
+
+
+        if($fetch){return $this->sendResponse($fetch,'successss');}
         else{return $this->sendError('fail','fail');}
 
     }
