@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\general;
 use App\Http\Controllers\API\apiController as apiController;
 use App\User;
 use App\UserProfile;
+use App\Role;
 use Illuminate\Http\Request;
 
 class userController extends apiController
@@ -43,6 +44,8 @@ class userController extends apiController
             'userID'      => $user['id'],
             'billingInfo' => 'nil'
         ]);
+
+        $user->roles()->attach(Role::query()->where('name','Customer')->first());
 
         $accessToken = $user->createToken('authToken')->accessToken;
 

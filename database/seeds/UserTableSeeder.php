@@ -15,7 +15,7 @@ class UserTableSeeder extends Seeder
     {
         //
 
-        $adminRole = Role::query()->where('name','Administrator');
+        $adminRole = Role::query()->where('name','Administrator')->first();
 
         $adminUser             = new User();
         $adminUser['name']     = "Admin";

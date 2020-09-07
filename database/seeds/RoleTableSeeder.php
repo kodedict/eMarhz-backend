@@ -19,7 +19,7 @@ class RoleTableSeeder extends Seeder
         $adminRole->save();
 
         $sellerRole                = new Role();
-        $sellerRole['name']        = "Seller/Creator";
+        $sellerRole['name']        = "Seller";
         $sellerRole['description'] = "Seller/Creator privilege";
         $sellerRole->save();
 
