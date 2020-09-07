@@ -12,13 +12,14 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                    @endifssss
+                    @endif
 
                     
                     <div>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <p><a href="{{url()->previous()}}">Back</a></p>
             <form method="post" action='add-supplier'>
             @csrf
     <div class="form-row">

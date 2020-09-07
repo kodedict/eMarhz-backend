@@ -23,7 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //===Admin Route
 
-
 Route::get('/supplier','backend\admin\supplyController@index');
 
 Route::view('/add-supplier','pages.admin.supplier.create');
