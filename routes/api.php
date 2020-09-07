@@ -23,17 +23,7 @@ Route::post('/register','API\general\userController@register');
 
 //Route::group(['middleware' => 'auth:api'], function(){
 
-//===Admin Route
 
-    Route::get('/adminProfile/{id}','API\admin\userController@getProfile');
-
-    Route::get('/supply','API\admin\supplyController@index');
-
-    Route::post('/supply','API\admin\supplyController@store');
-    Route::post('/supply/{id}','API\admin\supplyController@update');
-    Route::post('/supplyDelete/{id}','API\admin\supplyController@delete');
-
-    //===Admin Route
 
 //===Seller Route
 

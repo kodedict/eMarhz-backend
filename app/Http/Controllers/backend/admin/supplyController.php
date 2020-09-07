@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\WEB\admin;
+namespace App\Http\Controllers\backend\admin;
 
 use App\Http\Controllers\Controller;
 use App\Supply;
@@ -15,8 +15,9 @@ class supplyController extends Controller
 
         $fetch = Supply::query()->get()->sortByDesc('id')->all();
 
-        if($fetch){return $this->sendResponse($fetch,'success');}
-        else{return $this->sendError('fail','fail');}
+        
+
+        return view('pages.admin.supplier.index')->with(compact('fetch'));
 
     }
 
@@ -27,21 +28,31 @@ class supplyController extends Controller
             'name' => $request['name']
         ]);
 
-        if($post){return $this->sendResponse('','success');}
+        if($post){return redirect('/supplier');}
         else{return $this->sendError('fail','fail');}
+    }
+
+    // Return edit supplier
+
+    public function edit($id){
+        $query = Supply::query()->find($id);
+        if(!$query){return abort(404);}
+        else{
+            return view('pages.admin.supplier.edit')->with(compact('query'));
+        }
     }
 
     //Return update supplier
     public function update(Request $request,$id){
 
         $query = Supply::query()->find($id);
-        if(!$query){return $this->sendError('fail','fail');}
+        if(!$query){return abort(404);}
         else{
             $query['name'] = $request['name'];
             $update = $query->save();
 
-            if($update){return $this->sendResponse('','success');}
-            else{return $this->sendError('fail','fail');}
+            if($update){return redirect('/supplier');}
+           else{return redirect('/supplier');}
 
         }
     }
@@ -50,11 +61,11 @@ class supplyController extends Controller
     public function delete($id){
 
         $query = Supply::query()->find($id);
-        if(!$query){return $this->sendError('fail','fail');}
+        if(!$query){return abort(404);}
         else{
            $delete = $query->delete();
-           if($delete){return $this->sendResponse('','success');}
-           else{return $this->sendError('fail','fail');}
+           if($delete){return redirect()->back();}
+           else{return redirect()->back();;}
         }
 
     }
