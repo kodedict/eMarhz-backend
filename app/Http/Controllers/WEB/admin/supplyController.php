@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\API\admin;
+namespace App\Http\Controllers\WEB\admin;
 
-use App\Http\Controllers\API\apiController as apiController;
+use App\Http\Controllers\Controller;
 use App\Supply;
 use Illuminate\Http\Request;
 
-class supplyController extends apiController
+class supplyController extends Controller
 {
     //
 

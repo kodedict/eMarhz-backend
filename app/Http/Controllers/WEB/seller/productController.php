@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\API\seller;
+namespace App\Http\Controllers\WEB\seller;
 
-use App\Http\Controllers\API\apiController as apiController;
+use App\Http\Controllers\Controller;
 use App\Product;
 use App\Supply;
 use Illuminate\Http\Request;
 
-class productController extends apiController
+class productController extends Controller
 {
     //
 
