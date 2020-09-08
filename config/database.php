@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Str;
 
+
 return [
 
     /*
@@ -16,6 +17,8 @@ return [
     */
 
     'default' => env('DB_CONNECTION', 'mysql'),
+
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -32,6 +35,8 @@ return [
     | choice installed on your machine before you begin development.
     |
     */
+
+
 
     'connections' => [
 
@@ -101,7 +106,9 @@ return [
   'prefix' => '',
   'strict' => false,
 ],
+
     ],
+    
 
     /*
     |--------------------------------------------------------------------------

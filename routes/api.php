@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+
+Route::get('/product','API\general\productController@getProduct');
+Route::post('/login','API\general\userController@login');
+Route::post('/register','API\general\userController@register');
+//Route::post('/forget-PW','API\general\userController@forgetPW');
+
+//Route::group(['middleware' => 'auth:api'], function(){
+
+
+
+//===Customer Route
+
+    Route::get('/customerProfile/{id}','API\customer\userController@getProfile');
+
+    Route::get('/order/{id}','API\customer\orderController@order');
+    Route::post('/placeOrder','API\customer\orderController@placeOrder');
+
+    //===Customer Route
+//});
