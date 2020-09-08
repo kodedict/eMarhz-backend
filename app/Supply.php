@@ -10,4 +10,6 @@ class Supply extends Model
     protected $fillable = [
         'name'
     ];
+
+   
 }

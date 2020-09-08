@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('image','200');
             $table->string('supplierID','11');
             $table->string('price','50');
+            $table->string('sellerID','11');
             $table->timestamps();
         });
     }

@@ -34,3 +34,21 @@ Route::post('/supplier/{id}','backend\admin\supplyController@update')->name('upd
 Route::get('/supplierDelete/{id}','backend\admin\supplyController@delete')->name('deleteSupply');
 
 //===Admin Route
+
+
+
+//===Seller Route
+
+  
+
+    Route::get('/product','backend\seller\productController@index');
+
+    Route::get('/add-product','backend\seller\productController@create');
+    Route::post('/add-product','backend\seller\productController@store');
+    
+    Route::get('/edit-product/{id}','backend\seller\productController@edit')->name('editProduct');
+    Route::post('/sellerProduct/{id}','backend\seller\productController@update')->name('updateProduct');
+    
+    Route::get('/sellerProductDelete/{id}','backend\seller\productController@delete')->name('deleteProduct');
+
+    //===Seller Route

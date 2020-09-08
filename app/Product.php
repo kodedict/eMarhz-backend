@@ -12,6 +12,12 @@ class Product extends Model
         'quantity',
         'image',
         'supplierID',
-        'price'
+        'price',
+        'sellerID'
     ];
+
+    public function supply()
+    {
+        return $this->belongsTo(Supply::class,'supplierID');
+    }
 }

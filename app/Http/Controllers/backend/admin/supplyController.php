@@ -6,9 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Supply;
 use Illuminate\Http\Request;
 
+
 class supplyController extends Controller
 {
     //
+
+      public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     //Return page supplier list
     public function index(){
@@ -29,7 +35,7 @@ class supplyController extends Controller
         ]);
 
         if($post){return redirect('/supplier');}
-        else{return $this->sendError('fail','fail');}
+        else{return redirect('/supplier');}
     }
 
     // Return edit supplier

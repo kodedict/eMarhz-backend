@@ -25,20 +25,6 @@ Route::post('/register','API\general\userController@register');
 
 
 
-//===Seller Route
-
-    Route::get('/sellerProfile/{id}','API\seller\userController@getProfile');
-
-    Route::get('/sellerProduct','API\seller\productController@index');
-
-    Route::get('/sellerSupply','API\seller\productController@formExtra');
-
-    Route::post('/sellerProduct','API\seller\productController@store');
-    Route::post('/sellerProduct/{id}','API\seller\productController@update');
-    Route::post('/sellerProductDelete/{id}','API\seller\productController@delete');
-
-    //===Seller Route
-
 //===Customer Route
 
     Route::get('/customerProfile/{id}','API\customer\userController@getProfile');
