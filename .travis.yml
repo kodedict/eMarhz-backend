@@ -14,7 +14,7 @@ before_script:
   - composer self-update
   - php artisan key:generate
   - php artisan migrate
-  - composer install passport
+  - composer require passport
 
 script:
   - vendor/bin/phpunit
