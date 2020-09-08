@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Str;
 
-
 return [
 
     /*
@@ -17,8 +16,6 @@ return [
     */
 
     'default' => env('DB_CONNECTION', 'mysql'),
-
-    
 
     /*
     |--------------------------------------------------------------------------
@@ -36,8 +33,6 @@ return [
     |
     */
 
-
-
     'connections' => [
 
         'sqlite' => [
@@ -51,11 +46,11 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'DB_HOST'),
+            'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'e7xvt7yajwy96vf6'),
-            'username' => env('DB_USERNAME', 'orzybewuu0kxceph'),
-            'password' => env('DB_PASSWORD', 'yqd2mcuwr4fm77vd'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -106,9 +101,7 @@ return [
   'prefix' => '',
   'strict' => false,
 ],
-
     ],
-    
 
     /*
     |--------------------------------------------------------------------------
