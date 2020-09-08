@@ -2,13 +2,6 @@
 
 use Illuminate\Support\Str;
 
-$url = parse_url(getenv("mysql://b193c7673736f4:6f81b673@us-cdbr-east-02.cleardb.co
-m/heroku_013841f035c1fa5?reconnect=true"));
-
-$host =     $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$database = substr($url["path"], 1);
 
 return [
 
@@ -23,7 +16,7 @@ return [
     |
     */
 
-    'default' => env('heroku_mysql_connection', 'mysql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     
 
@@ -113,16 +106,7 @@ return [
   'prefix' => '',
   'strict' => false,
 ],
-'heroku_mysql_connection' => array(
-    'driver' => 'mysql',
-    'host' => $host,
-    'database' => $database,
-    'username' => $username,
-    'password' => $password,
-    'charset' => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix' => '',
-),
+
     ],
     
 
