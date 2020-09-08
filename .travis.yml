@@ -9,7 +9,8 @@ cache:
     - vendor
 
 before_script:
-  - cp .env .env.travis
+  - cp .env.travis .env
+  - sudo mysql -e 'create database homestead;'
   - composer self-update
   - composer install --no-interaction
   - php artisan key:generate
