@@ -2,6 +2,13 @@
 
 use Illuminate\Support\Str;
 
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$host = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$database = substr($url["path"], 1);
+
 return [
 
     /*
@@ -15,7 +22,9 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('heroku_mysql_connection', 'mysql'),
+
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -32,6 +41,8 @@ return [
     | choice installed on your machine before you begin development.
     |
     */
+
+
 
     'connections' => [
 
@@ -90,17 +101,16 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
-'testing' => [
-  'driver' => 'mysql',
-  'host' => env('DB_TEST_HOST', 'localhost'),
-  'database' => env('DB_TEST_DATABASE', 'homestead'),
-  'username' => env('DB_TEST_USERNAME', 'homestead'),
-  'password' => env('DB_TEST_PASSWORD', 'secret'),
-  'charset' => 'utf8',
-  'collation' => 'utf8_unicode_ci',
-  'prefix' => '',
-  'strict' => false,
-],
+'heroku_mysql_connection' => array(
+    'driver' => 'mysql',
+    'host' => $host,
+    'database' => $database,
+    'username' => $username,
+    'password' => $password,
+    'charset' => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix' => '',
+),
     ],
 
     /*
