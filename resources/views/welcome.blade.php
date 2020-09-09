@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Seller registration platform
+                    <h3>Seller registration platform</h3>
                 </div>
             </div>
         </div>
