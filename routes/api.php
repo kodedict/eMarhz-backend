@@ -35,6 +35,3 @@ Route::post('/register','API\general\userController@register');
     //===Customer Route
 //});
 
-if (env('APP_ENV') === 'production') {
-    URL::forceSchema('https');
-}

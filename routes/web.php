@@ -53,6 +53,4 @@ Route::get('/supplierDelete/{id}','backend\admin\supplyController@delete')->name
 
     //===Seller Route
 
-if (env('APP_ENV') === 'production') {
-    URL::forceSchema('https');
-}
+
