@@ -43,7 +43,9 @@ class productController extends Controller
 
         $destinationPath = 'upload';
 
-        $filename = $request['name'].".".$file->getClientOriginalExtension();
+        $productName = str_replace(' ','-',$request['name']);
+        $productName = strtolower($productName);
+        $filename = $productName.".".$file->getClientOriginalExtension();
         $fileUrl = url('/')."/".$destinationPath."/".$filename;
         $file->move($destinationPath,$filename);
 
